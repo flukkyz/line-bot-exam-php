@@ -25,16 +25,18 @@ function pushMsg($arrayHeader,$arrayPostData){
     $message = $arrayJson['events'][0]['message']['text'];
     $id = $arrayJson['events'][0]['source']['userId'];
 
-    $arrayPostData['to'] = $id;
-    $arrayPostData['messages'][0]['type'] = "text";
-    $arrayPostData['messages'][0]['text'] = "ชื่อไรอ่ะ";
-    $arrayPostData['messages'][1]['type'] = "sticker";
-    $arrayPostData['messages'][1]['packageId'] = "2";
-    $arrayPostData['messages'][1]['stickerId'] = "34";
-    pushMsg($arrayHeader,$arrayPostData);
+    if($message == "สวัสดี"){
+        $arrayPostData['to'] = $id;
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สวัสดี ชื่อไรอ่ะ";
+        $arrayPostData['messages'][1]['type'] = "sticker";
+        $arrayPostData['messages'][1]['packageId'] = "2";
+        $arrayPostData['messages'][1]['stickerId'] = "34";
+        pushMsg($arrayHeader,$arrayPostData);
+    }
 
 
-    if(!empty($message)){
+    if($message != "สวัสดี"){
         $arrayPostData['to'] = $id;
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "ไอ่สัส".$message;
