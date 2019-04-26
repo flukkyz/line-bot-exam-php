@@ -41,12 +41,12 @@ function pushMsg($arrayHeader,$arrayPostData){
             "label" => "View detail",
             "uri" => "https://helpdesk.payap.ac.th/repairman/update-line-user-id?id=".$id
         ],
-//         "actions" => [
-//             [
-//             "type" => "postback",
-//             "label" => "เปิดการแจ้งเตือน",
-//             "data" => "action=buy&itemid=123"
-//             ],
+        "actions" => [
+            [
+            "type" => "uri",
+            "label" => "View detail",
+            "uri" => "https://helpdesk.payap.ac.th/repairman/update-line-user-id?id=".$id
+            ],
 //             [
 //             "type" => "postback",
 //             "label" => "Add to cart",
@@ -57,7 +57,7 @@ function pushMsg($arrayHeader,$arrayPostData){
 //             "label" => "View detail",repairman/update-line-user-id
 //             "uri" => "http://example.com/page/123"
 //             ]
-//         ]
+        ]
     ];
 
     if($message == "สวัสดี"){
