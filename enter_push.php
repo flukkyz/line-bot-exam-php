@@ -39,7 +39,7 @@ function pushMsg($arrayHeader,$arrayPostData){
         "defaultAction" => [
             "type" => "postback",
             "label" => "View detail",
-            "uri" => "action=buy&itemid=123"
+            "data" => "action=buy&itemid=123"
         ],
         "actions" => [
             [
