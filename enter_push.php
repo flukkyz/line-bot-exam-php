@@ -25,26 +25,77 @@ function pushMsg($arrayHeader,$arrayPostData){
     $message = $arrayJson['events'][0]['message']['text'];
     $id = $arrayJson['events'][0]['source']['userId'];
 
+
+    $postback = $arrayJson['events'][0]['postback']['data'];
+
+    $template = [
+        "type" => "buttons",
+        "thumbnailImageUrl" => "https://helpdesk.payap.ac.th/uploads/repair/5/repair_1556004516_1991.jpg",
+        "imageAspectRatio" => "rectangle",
+        "imageSize" => "cover",
+        "imageBackgroundColor" => "#FFFFFF",
+        "title" => "Menu",
+        "text" => "Please select",
+        "defaultAction" => [
+            "type" => "uri",
+            "label" => "View detail",
+            "uri" => "http://example.com/page/123"
+        ],
+        "actions" => [
+            [
+            "type" => "postback",
+            "label" => "Buy",
+            "data" => "action=buy&itemid=123"
+            ],
+            [
+            "type" => "postback",
+            "label" => "Add to cart",
+            "data" => "action=add&itemid=123"
+            ],
+            [
+            "type" => "uri",
+            "label" => "View detail",
+            "uri" => "http://example.com/page/123"
+            ]
+        ]
+    ];
+
     if($message == "สวัสดี"){
         $arrayPostData['to'] = $id;
+        // $arrayPostData['messages'][0]['type'] = "text";
+        // $arrayPostData['messages'][0]['text'] = "สวัสดี ชื่อไรอ่ะ";
+        // $arrayPostData['messages'][1]['type'] = "sticker";
+        // $arrayPostData['messages'][1]['packageId'] = "2";
+        // $arrayPostData['messages'][1]['stickerId'] = "34";
+        $arrayPostData['messages'][2]['type'] = "template";
+        $arrayPostData['messages'][2]['altText'] = "This is a buttons template";
+        $arrayPostData['messages'][2]['template'] = $template;
+        pushMsg($arrayHeader,$arrayPostData);
+    }
+
+    if(!empty($postback)){
+        $arrayPostData['to'] = $id;
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "สวัสดี ชื่อไรอ่ะ";
-        $arrayPostData['messages'][1]['type'] = "sticker";
-        $arrayPostData['messages'][1]['packageId'] = "2";
-        $arrayPostData['messages'][1]['stickerId'] = "34";
+        $arrayPostData['messages'][0]['text'] = $postback;
+        // $arrayPostData['messages'][1]['type'] = "sticker";
+        // $arrayPostData['messages'][1]['packageId'] = "2";
+        // $arrayPostData['messages'][1]['stickerId'] = "34";
+        // $arrayPostData['messages'][2]['type'] = "template";
+        // $arrayPostData['messages'][2]['altText'] = "This is a buttons template";
+        // $arrayPostData['messages'][2]['template'] = $template;
         pushMsg($arrayHeader,$arrayPostData);
     }
 
 
-    if($message != "สวัสดี"){
-        $arrayPostData['to'] = $id;
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "ไอ่สัส".$message;
-        // $arrayPostData['messages'][1]['type'] = "sticker";
-        // $arrayPostData['messages'][1]['packageId'] = "2";
-        // $arrayPostData['messages'][1]['stickerId'] = "34";
-        pushMsg($arrayHeader,$arrayPostData);
-     }
+    // if($message != "สวัสดี"){
+    //     $arrayPostData['to'] = $id;
+    //     $arrayPostData['messages'][0]['type'] = "text";
+    //     $arrayPostData['messages'][0]['text'] = "ไอ่สัส".$message;
+    //     // $arrayPostData['messages'][1]['type'] = "sticker";
+    //     // $arrayPostData['messages'][1]['packageId'] = "2";
+    //     // $arrayPostData['messages'][1]['stickerId'] = "34";
+    //     pushMsg($arrayHeader,$arrayPostData);
+    //  }
 
    
    exit;
