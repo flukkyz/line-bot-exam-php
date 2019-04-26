@@ -30,34 +30,34 @@ function pushMsg($arrayHeader,$arrayPostData){
 
     $template = [
         "type" => "buttons",
-        "thumbnailImageUrl" => "https://helpdesk.payap.ac.th/uploads/repair/5/repair_1556004516_1991.jpg",
+        "thumbnailImageUrl" => "https://helpdesk.payap.ac.th/images/logo_pdf.jpg",
         "imageAspectRatio" => "rectangle",
         "imageSize" => "cover",
         "imageBackgroundColor" => "#FFFFFF",
-        "title" => "Menu",
-        "text" => "Please select",
+        "title" => "เปิดการแจ้งเตือน",
+        "text" => "เปิดการแจ้งเตือนงานซ่อมแซมของคุณ",
         "defaultAction" => [
-            "type" => "uri",
+            "type" => "postback",
             "label" => "View detail",
-            "uri" => "http://example.com/page/123"
+            "uri" => "action=buy&itemid=123"
         ],
-        "actions" => [
-            [
-            "type" => "postback",
-            "label" => "Buy",
-            "data" => "action=buy&itemid=123"
-            ],
-            [
-            "type" => "postback",
-            "label" => "Add to cart",
-            "data" => "action=add&itemid=123"
-            ],
-            [
-            "type" => "uri",
-            "label" => "View detail",
-            "uri" => "http://example.com/page/123"
-            ]
-        ]
+        // "actions" => [
+        //     [
+        //     "type" => "postback",
+        //     "label" => "Buy",
+        //     "data" => "action=buy&itemid=123"
+        //     ],
+        //     [
+        //     "type" => "postback",
+        //     "label" => "Add to cart",
+        //     "data" => "action=add&itemid=123"
+        //     ],
+        //     [
+        //     "type" => "uri",
+        //     "label" => "View detail",
+        //     "uri" => "http://example.com/page/123"
+        //     ]
+        // ]
     ];
 
     if($message == "สวัสดี"){
