@@ -15,7 +15,7 @@ function pushMsg($arrayHeader,$arrayPostData){
  }
 
 
-    $accessToken = "k6Noqtym0hpj0/fTeTKzviUFm/1loct7qjecS0bixWZ/hEab7oiOSdf/ebaeCVwrW7vlga4yF6ut8U9nt8wIdlOMSV3tsSXjtrteVKzk49O5GEYuRBWhp8n817NY0REiGUNW+tLzRD2IFkEqZFWDAwdB04t89/1O/w1cDnyilFU=";//copy ข้อความ Channel access token ตอนที่ตั้งค่า
+    $accessToken = "OlEbUMroXY/Ehw7SVSqNc/Ir9UyUebOCwlN13Ib37Jc6ROWj13R1kGayhAYQWiq44u+/JPVXZzdZqlFfVCNtIsXs+NGajxXP1vjrWPS2YBSB89SeOhfXk0O+0s6mpn3vZRsbqnJniHsj6TRWuXdryQdB04t89/1O/w1cDnyilFU=";//copy ข้อความ Channel access token ตอนที่ตั้งค่า
     $content = file_get_contents('php://input');
     $arrayJson = json_decode($content, true);
     $arrayHeader = array();
