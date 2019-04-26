@@ -44,7 +44,7 @@ function pushMsg($arrayHeader,$arrayPostData){
         "actions" => [
             [
             "type" => "uri",
-            "label" => "View detail",
+            "label" => "เปิดการแจ้งเตือน",
             "uri" => "https://helpdesk.payap.ac.th/repairman/update-line-user-id?id=".$id
             ],
 //             [
@@ -60,7 +60,7 @@ function pushMsg($arrayHeader,$arrayPostData){
         ]
     ];
 
-    if($message == "สวัสดี"){
+//     if($message == "สวัสดี"){
         $arrayPostData['to'] = $id;
 //         $arrayPostData['messages'][0]['type'] = "text";
 //         $arrayPostData['messages'][0]['text'] = "สวัสดี ชื่อไรอ่ะ";
@@ -71,7 +71,7 @@ function pushMsg($arrayHeader,$arrayPostData){
         $arrayPostData['messages'][0]['altText'] = "This is a buttons template";
         $arrayPostData['messages'][0]['template'] = $template;
         pushMsg($arrayHeader,$arrayPostData);
-    }
+//     }
 
 //     if(!empty($postback)){
 //         $arrayPostData['to'] = $id;
