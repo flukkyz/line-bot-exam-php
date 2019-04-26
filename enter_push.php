@@ -34,30 +34,30 @@ function pushMsg($arrayHeader,$arrayPostData){
         "imageAspectRatio" => "rectangle",
         "imageSize" => "cover",
         "imageBackgroundColor" => "#FFFFFF",
-        "title" => "เปิดการแจ้งเตือน",
+        "title" => "แจ้งเตือนงานซ่อมแซม",
         "text" => "เปิดการแจ้งเตือนงานซ่อมแซมของคุณ",
         "defaultAction" => [
             "type" => "postback",
             "label" => "View detail",
             "uri" => "action=buy&itemid=123"
         ],
-        // "actions" => [
-        //     [
-        //     "type" => "postback",
-        //     "label" => "Buy",
-        //     "data" => "action=buy&itemid=123"
-        //     ],
-        //     [
-        //     "type" => "postback",
-        //     "label" => "Add to cart",
-        //     "data" => "action=add&itemid=123"
-        //     ],
-        //     [
-        //     "type" => "uri",
-        //     "label" => "View detail",
-        //     "uri" => "http://example.com/page/123"
-        //     ]
-        // ]
+        "actions" => [
+            [
+            "type" => "postback",
+            "label" => "เปิดการแจ้งเตือน",
+            "data" => "action=buy&itemid=123"
+            ],
+//             [
+//             "type" => "postback",
+//             "label" => "Add to cart",
+//             "data" => "action=add&itemid=123"
+//             ],
+//             [
+//             "type" => "uri",
+//             "label" => "View detail",
+//             "uri" => "http://example.com/page/123"
+//             ]
+        ]
     ];
 
     if($message == "สวัสดี"){
