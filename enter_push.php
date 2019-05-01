@@ -61,16 +61,16 @@ function pushMsg($arrayHeader,$arrayPostData){
     ];
 
 //     if($message == "สวัสดี"){
-        $arrayPostData['to'] = $id;
+//         $arrayPostData['to'] = $id;
 //         $arrayPostData['messages'][0]['type'] = "text";
 //         $arrayPostData['messages'][0]['text'] = "สวัสดี ชื่อไรอ่ะ";
 //         $arrayPostData['messages'][1]['type'] = "sticker";
 //         $arrayPostData['messages'][1]['packageId'] = "2";
 //         $arrayPostData['messages'][1]['stickerId'] = "34";
-        $arrayPostData['messages'][0]['type'] = "template";
-        $arrayPostData['messages'][0]['altText'] = "This is a buttons template";
-        $arrayPostData['messages'][0]['template'] = $template;
-        pushMsg($arrayHeader,$arrayPostData);
+//         $arrayPostData['messages'][0]['type'] = "template";
+//         $arrayPostData['messages'][0]['altText'] = "This is a buttons template";
+//         $arrayPostData['messages'][0]['template'] = $template;
+//         pushMsg($arrayHeader,$arrayPostData);
 //     }
 
 //     if(!empty($postback)){
