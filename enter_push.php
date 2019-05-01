@@ -39,13 +39,13 @@ function pushMsg($arrayHeader,$arrayPostData){
         "defaultAction" => [
             "type" => "uri",
             "label" => "View detail",
-            "uri" => "helpdesk.payap.ac.th/repairman/update-line-user-id?id=".$id
+            "uri" => "https://helpdesk.payap.ac.th/repairman/update-line-user-id?id=".$id
         ],
         "actions" => [
             [
             "type" => "uri",
             "label" => "เปิดการแจ้งเตือน",
-            "uri" => "helpdesk.payap.ac.th/repairman/update-line-user-id?id=".$id
+            "uri" => "https://helpdesk.payap.ac.th/repairman/update-line-user-id?id=".$id
             ],
 //             [
 //             "type" => "postback",
@@ -87,14 +87,21 @@ function pushMsg($arrayHeader,$arrayPostData){
 //     }
 
 
-    if($message == "uid"){
+    if($message == "Uid"){
         $arrayPostData['to'] = $id;
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = $id;
         pushMsg($arrayHeader,$arrayPostData);
      }
 
-    if($message == "btn"){
+    if($message == "Link"){
+        $arrayPostData['to'] = $id;
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "https://helpdesk.payap.ac.th/repairman/update-line-user-id?id=".$id;
+        pushMsg($arrayHeader,$arrayPostData);
+     }
+
+    if($message == "Btn"){
         $arrayPostData['messages'][0]['type'] = "template";
         $arrayPostData['messages'][0]['altText'] = "This is a buttons template";
         $arrayPostData['messages'][0]['template'] = $template;
