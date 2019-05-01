@@ -87,21 +87,21 @@ function pushMsg($arrayHeader,$arrayPostData){
 //     }
 
 
-    if($message == "Uid"){
+    if(strtolower(trim($message)) == "Uid"){
         $arrayPostData['to'] = $id;
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = $id;
         pushMsg($arrayHeader,$arrayPostData);
      }
 
-    if($message == "Link"){
+    if(strtolower(trim($message)) == "Link"){
         $arrayPostData['to'] = $id;
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "https://helpdesk.payap.ac.th/repairman/update-line-user-id?id=".$id;
         pushMsg($arrayHeader,$arrayPostData);
      }
 
-    if($message == "Btn"){
+    if(strtolower(trim($message)) == "Btn"){
         $arrayPostData['messages'][0]['type'] = "template";
         $arrayPostData['messages'][0]['altText'] = "This is a buttons template";
         $arrayPostData['messages'][0]['template'] = $template;
