@@ -87,14 +87,14 @@ function pushMsg($arrayHeader,$arrayPostData){
 //     }
 
 
-    if($message != "uid"){
+    if($message == "uid"){
         $arrayPostData['to'] = $id;
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = $id;
         pushMsg($arrayHeader,$arrayPostData);
      }
 
-    if($message != "btn"){
+    if($message == "btn"){
         $arrayPostData['messages'][0]['type'] = "template";
         $arrayPostData['messages'][0]['altText'] = "This is a buttons template";
         $arrayPostData['messages'][0]['template'] = $template;
