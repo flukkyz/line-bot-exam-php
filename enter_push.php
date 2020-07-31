@@ -101,6 +101,13 @@ function pushMsg($arrayHeader,$arrayPostData){
         pushMsg($arrayHeader,$arrayPostData);
      }
 
+    if(strtolower(trim($message)) == "link2"){
+        $arrayPostData['to'] = $id;
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "https://services.payap.ac.th/repairman/update-line-user-id?id=".$id;
+        pushMsg($arrayHeader,$arrayPostData);
+     }
+
     if(strtolower(trim($message)) == "btn"){
         $arrayPostData['messages'][0]['type'] = "template";
         $arrayPostData['messages'][0]['altText'] = "This is a buttons template";
